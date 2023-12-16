@@ -1,10 +1,8 @@
-package com.mourid.voiture.entities;
-
+package com.aymen.voiture.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Data
 @AllArgsConstructor

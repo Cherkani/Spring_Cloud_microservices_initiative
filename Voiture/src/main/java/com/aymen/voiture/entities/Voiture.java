@@ -1,4 +1,4 @@
-package com.mourid.voiture.entities;
+package com.aymen.voiture.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +27,5 @@ public class Voiture {
     @Transient
     @ManyToOne
     private Client client;
-
 
 }

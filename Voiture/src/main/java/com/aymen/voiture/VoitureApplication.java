@@ -1,7 +1,8 @@
-package com.mourid.voiture;
-import com.mourid.voiture.entities.Client;
-import com.mourid.voiture.entities.Voiture;
-import com.mourid.voiture.repositories.VoitureRepository;
+package com.aymen.voiture;
+
+import com.aymen.voiture.entities.Client;
+import com.aymen.voiture.entities.Voiture;
+import com.aymen.voiture.repositories.VoitureRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,7 +21,6 @@ public class VoitureApplication {
         SpringApplication.run(VoitureApplication.class, args);
     }
 
-
     @Bean
     public CommandLineRunner initialiserBaseH2(VoitureRepository voitureRepository, ClientService clientService) {
         return args -> {
@@ -35,9 +35,12 @@ public class VoitureApplication {
             System.out.println("Nom est :" + c1.getNom());
             System.out.println("Age est :" + c1.getAge());
             System.out.println("**************************");
-            voitureRepository.save(new Voiture(Long.parseLong("1"), "Toyota", "A25 333", "Corolla", Long.parseLong("2"), c2));
-            voitureRepository.save(new Voiture(Long.parseLong("2"), "Renault", "B 6 3456", "Megane", Long.parseLong("1"), c2));
-            voitureRepository.save(new Voiture(Long.parseLong("3"), "Peugeot", "A 55 4444", "301", Long.parseLong("2"), c1));
+            voitureRepository
+                    .save(new Voiture(Long.parseLong("1"), "Toyota", "A25 333", "Corolla", Long.parseLong("2"), c2));
+            voitureRepository
+                    .save(new Voiture(Long.parseLong("2"), "Renault", "B 6 3456", "Megane", Long.parseLong("1"), c2));
+            voitureRepository
+                    .save(new Voiture(Long.parseLong("3"), "Peugeot", "A 55 4444", "301", Long.parseLong("2"), c1));
         };
     }
 

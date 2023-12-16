@@ -1,9 +1,8 @@
-package com.mourid.voiture.controllers;
+package com.aymen.voiture.controllers;
 
-
-import com.mourid.voiture.ClientService;
-import com.mourid.voiture.entities.Voiture;
-import com.mourid.voiture.repositories.VoitureRepository;
+import com.aymen.voiture.ClientService;
+import com.aymen.voiture.entities.Voiture;
+import com.aymen.voiture.repositories.VoitureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +16,10 @@ public class VoitureController {
     @Autowired
     VoitureRepository voitureRepository;
 
-
     @Autowired
-    ClientService clientService ;
+    ClientService clientService;
 
-    @GetMapping(value = "/voitures", produces = {"application/json"})
+    @GetMapping(value = "/voitures", produces = { "application/json" })
     public ResponseEntity<Object> findAll() {
         try {
             List<Voiture> voitures = voitureRepository.findAll();
@@ -48,12 +46,8 @@ public class VoitureController {
         }
     }
 
-
-
-
     @PutMapping("/voitures/{Id}")
-    public ResponseEntity<Object> update(@PathVariable Long Id, @RequestBody
-    Voiture updatedVoiture) {
+    public ResponseEntity<Object> update(@PathVariable Long Id, @RequestBody Voiture updatedVoiture) {
         try {
             Voiture existingVoiture = voitureRepository.findById(Id)
                     .orElseThrow(() -> new Exception("Voiture not found with ID: "
@@ -74,7 +68,6 @@ public class VoitureController {
                     !updatedVoiture.getModel().isEmpty()) {
                 existingVoiture.setModel(updatedVoiture.getModel());
             }
-
 
             // Save the updated Voiture
             Voiture savedVoiture = voitureRepository.save(existingVoiture);

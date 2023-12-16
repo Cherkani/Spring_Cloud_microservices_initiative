@@ -1,4 +1,4 @@
-package com.mourid.voiture;
+package com.aymen.voiture;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
