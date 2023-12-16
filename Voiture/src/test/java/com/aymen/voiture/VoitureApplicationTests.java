@@ -1,10 +1,10 @@
-package com.example.voiture;
+package com.mourid.voiture;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClientApplicationTests {
+class VoitureApplicationTests {
 
     @Test
     void contextLoads() {

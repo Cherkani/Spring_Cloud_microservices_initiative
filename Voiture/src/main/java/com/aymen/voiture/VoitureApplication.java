@@ -1,14 +1,10 @@
-package com.example.voiture;
-
-import com.example.voiture.entities.Voiture;
-import com.example.voiture.repisitories.VoitureRepository;
-import com.example.voiture.services.ClientService;
+package com.mourid.voiture;
+import com.mourid.voiture.entities.Client;
+import com.mourid.voiture.entities.Voiture;
+import com.mourid.voiture.repositories.VoitureRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.example.voiture.entities.Client;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableDiscoveryClient
 @EnableFeignClients
 @SpringBootApplication
-@EntityScan("com.example.voiture.entities")
 public class VoitureApplication {
 
     public static void main(String[] args) {

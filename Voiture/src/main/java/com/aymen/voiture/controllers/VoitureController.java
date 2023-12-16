@@ -1,8 +1,9 @@
-package com.example.voiture.contollers;
+package com.mourid.voiture.controllers;
 
-import com.example.voiture.entities.Voiture;
-import com.example.voiture.repisitories.VoitureRepository;
-import com.example.voiture.services.ClientService;
+
+import com.mourid.voiture.ClientService;
+import com.mourid.voiture.entities.Voiture;
+import com.mourid.voiture.repositories.VoitureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +39,7 @@ public class VoitureController {
                     .orElseThrow(() -> new Exception("Voiture Introuvable"));
 
             // Fetch the client details using the clientService
-            voiture.setClient(clientService.clientById(voiture.getClient().getId()));
+            voiture.setClient(clientService.clientById(voiture.getId_client()));
 
             return ResponseEntity.ok(voiture);
         } catch (Exception e) {
@@ -46,6 +47,7 @@ public class VoitureController {
                     .body("Voiture not found with ID: " + Id);
         }
     }
+
 
 
 

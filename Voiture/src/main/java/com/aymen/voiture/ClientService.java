@@ -1,10 +1,11 @@
-package com.example.voiture.services;
+package com.mourid.voiture;
 
-
-import com.example.voiture.entities.Client;
+import com.mourid.voiture.entities.Client;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
 
 @FeignClient(name = "SERVICE-CLIENT")
 public interface ClientService {
